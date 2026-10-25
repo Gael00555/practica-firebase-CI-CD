@@ -1,12 +1,5 @@
 # Reflexión · CI/CD con Firebase Hosting y hardening de headers
 
-- Repo: https://github.com/Gael00555/practica-firebase-CI-CD
-- Producción: https://fir-hosting-tp-eb401.web.app
-- PR mergeado con comentario del bot: [COMPLETAR: link al PR de feat/headers]
-
----
-
-## Mediciones de `check-headers.mjs`
 
 ### Antes (B1): producción sin cambios
 
