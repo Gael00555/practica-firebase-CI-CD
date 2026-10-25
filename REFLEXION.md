@@ -41,20 +41,6 @@ Calificación en securityheaders.com: **A**
   ✔ cache-control: public, max-age=31536000, immutable
 
 ✅ Todos los controles pasaron.
-```
-
-La salida del script acorta la CSP; la política completa que sirve producción (`curl -I`) es:
-
-```
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' https://picsum.photos https://fastly.picsum.photos; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
-```
-
-Nota: el `Strict-Transport-Security` que se ve en `*.web.app` lo impone Firebase
-(`max-age=31556926; includeSubDomains; preload`) y pisa el valor de mi
-`firebase.json`. El valor propio solo tendría efecto con un dominio personalizado.
-
----
-
 ## Preguntas de reflexión
 
 ### 1. ¿Por qué el preview tiene vencimiento? ¿Qué riesgos tendría uno que no vence nunca?
@@ -163,6 +149,4 @@ después de un rollback.
   Como `clone` copia el mismo build, el footer mostró la rama `feat/titulo`, no
   `main`: el footer indica qué commit se compiló, no qué hay en `main`.
 - **Estado de `main` tras el rollback:** `main` sigue teniendo el código nuevo,
-  así que el próximo merge volvería a desplegar lo que había revertido. En un
-  equipo real se hace un `git revert` del commit problemático, por PR, para que
-  el repositorio y producción coincidan.
+  así que el próximo merge volvería a desplegar lo que había revertido.
